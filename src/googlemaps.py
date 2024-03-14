@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 import re
-from exceptions import InvalidUrlError
+from src.exceptions import InvalidUrlError
 
 class GoogleMapsReviewsScrapper:
 
