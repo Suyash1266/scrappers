@@ -11,5 +11,4 @@ setup(
     ],
     python_requires=">=3.10",
     package_dir={'scrappers': 'src'},
-    py_modules=['scrappers.amazon', 'scrappers.googlemaps'],
 )
