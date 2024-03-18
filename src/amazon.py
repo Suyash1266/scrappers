@@ -20,6 +20,35 @@ class AmazonReviewsScrapper:
         self.wait = WebDriverWait(self.browser, 10)
 
     def scrape_reviews(self, link, options: dict = None, number_of_reviews=20):
+        """
+        Scrape reviews for a product from an Amazon India URL.
+
+        Parameters
+        ----------
+        link : str
+            The Amazon India URL of the product.
+        options : dict, optional
+            Additional options for creating the URL (default is None).
+        number_of_reviews : int, optional
+            The number of reviews to scrape (default is 20).
+
+        Returns
+        -------
+        dict
+            A dictionary containing the scraped information:
+                - "Product Name": The name of the product.
+                - "Product Link": The link to the product page.
+                - "Total Ratings": The total number of ratings for the product.
+                - "Average Rating": The average rating of the product.
+                - "Ratings": A dictionary containing individual ratings.
+                - "Total Reviews": The total number of reviews for the product.
+                - "Reviews": A list of reviews for the product.
+        Raises
+        ------
+        InvalidUrlError
+            If the URL is not a valid Amazon India URL.
+
+        """
         if self.__validate_amazon_url__(link) == False:
             raise InvalidUrlError(
                 f"URL is not a valid Amazon India URL: {link}")
